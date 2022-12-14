@@ -15,13 +15,12 @@ public class HW_5 {
     }
     public static void main(String[] args) {
         Map<MyKey, String> colorMap = new HashMap<>();
-        colorMap.put(1, "red", "#C92A39", "красный");
-        colorMap.put(2, "blue", "#3E58E0", "синий");
+        colorMap.put(new MyKey(1, "red", "#C92A39"), "красный");
+        colorMap.put(2, "blue", "#3E58Ea0", "синий");
         colorMap.put(3, "green", "#078B04", "зеленый");
         System.out.println(colorMap.entrySet());
 
-        for (int i = 0; i < colorMap.size(); i++) {
-            System.out.println(colorMap.compute(i, ((myKey, s) -> s = s + "!")));
+        colorMap.compute(new MyKey((1, "red", "#C92A39")), ((MyKey, s) -> s = s + "!")));
         }
     }
 }
